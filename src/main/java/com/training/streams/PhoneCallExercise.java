@@ -3,7 +3,7 @@ package com.training.streams;
 import java.time.Duration;
 import java.util.*;
 
-class Exercise {
+class PhoneCallExercise {
 
     public Optional<String> solution(List<PhoneCall> phoneCalls) {
 
@@ -24,7 +24,7 @@ class Exercise {
     }
 
     public static void main(String[] args) {
-        Exercise exercise = new Exercise();
+        PhoneCallExercise exercise = new PhoneCallExercise();
         List<PhoneCall> phoneCalls = Arrays.asList(new PhoneCall("+330677", Duration.ofMinutes(5)),
                 new PhoneCall("+330678", Duration.ofMinutes(7)), new PhoneCall("+330677", Duration.ofMinutes(5)));
         System.out.println(exercise.solution(phoneCalls).get());
