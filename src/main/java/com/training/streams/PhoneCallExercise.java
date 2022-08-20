@@ -5,7 +5,7 @@ import java.util.*;
 
 class PhoneCallExercise {
 
-    public Optional<String> solution(List<PhoneCall> phoneCalls) {
+    public Optional<String> findPhoneNumber(List<PhoneCall> phoneCalls) {
 
        Map<String, Duration> durations = new HashMap<>();
 
@@ -27,7 +27,12 @@ class PhoneCallExercise {
         PhoneCallExercise exercise = new PhoneCallExercise();
         List<PhoneCall> phoneCalls = Arrays.asList(new PhoneCall("+330677", Duration.ofMinutes(5)),
                 new PhoneCall("+330678", Duration.ofMinutes(7)), new PhoneCall("+330677", Duration.ofMinutes(5)));
-        System.out.println(exercise.solution(phoneCalls).orElse(null));
+        final Optional<String> phoneNumber = exercise.findPhoneNumber(phoneCalls);
+        if(phoneNumber.isPresent()) {
+            System.out.println("found phone number : "+phoneNumber.get());
+        } else {
+            System.out.println("no phone number found");
+        }
     }
 
 }
