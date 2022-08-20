@@ -15,7 +15,7 @@ class PhoneCallExercise {
            });
        });
 
-       Duration max = durations.values().stream().max(Duration::compareTo).get();
+       Duration max = durations.values().stream().max(Duration::compareTo).orElse(Duration.ZERO);
 
        return durations.entrySet().stream().filter(entry -> entry.getValue().equals(max))
                .map(Map.Entry::getKey).min(String::compareTo);
@@ -27,7 +27,7 @@ class PhoneCallExercise {
         PhoneCallExercise exercise = new PhoneCallExercise();
         List<PhoneCall> phoneCalls = Arrays.asList(new PhoneCall("+330677", Duration.ofMinutes(5)),
                 new PhoneCall("+330678", Duration.ofMinutes(7)), new PhoneCall("+330677", Duration.ofMinutes(5)));
-        System.out.println(exercise.solution(phoneCalls).get());
+        System.out.println(exercise.solution(phoneCalls).orElse(null));
     }
 
 }
