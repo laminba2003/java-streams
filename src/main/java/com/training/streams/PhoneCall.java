@@ -1,22 +1,15 @@
 package com.training.streams;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 import java.time.Duration;
 
+@AllArgsConstructor
+@Data
 class PhoneCall {
 
-    private String phoneNumber;
-    private Duration duration;
+    String phoneNumber;
+    Duration duration;
 
-    public PhoneCall(String phoneNumber, Duration duration) {
-        this.phoneNumber = phoneNumber;
-        this.duration = duration;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public Duration getDuration() {
-        return duration;
-    }
 }
